@@ -1,7 +1,0 @@
-(pkgs.python3.withPackages (python-pkgs: with python-pkgs; []))
--
-ms-python.python
-ms-python.debugpy
-ms-python.vscode-pylance
-ms-python.black-formatter
--
