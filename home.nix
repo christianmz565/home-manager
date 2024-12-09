@@ -33,8 +33,11 @@
     hypridle
     hyprlock
     hyprshot
+    hyprcursor
     nerd-fonts.caskaydia-mono
     libsForQt5.qt5ct
+    catppuccin-gtk
+    nwg-look
   ];
 
   programs.starship.enable = true;
@@ -91,7 +94,7 @@
   # through Home Manager then you have to manually source 'hm-session-vars.sh'
   # located at either
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    GTK_THEME = "catppuccin-frappe-blue-standard";
   };
 
   # Let Home Manager install and manage itself.

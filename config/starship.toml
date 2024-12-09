@@ -86,12 +86,13 @@ Fedora = "󰣛"
 Alpine = ""
 Amazon = ""
 Android = ""
-Nixos = "󰣇"
+Arch = "󰣇"
 Artix = "󰣇"
 CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+NixOS = ""
 
 [username]
 show_always = true
