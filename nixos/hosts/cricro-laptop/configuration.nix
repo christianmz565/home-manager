@@ -11,14 +11,37 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
+    };
+    loader.efi.canTouchEfiVariables = true;
+    kernelModules = [ "v4l2loopback" ];
+    extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      IPv6 = {
+        Enabled = true;
+      };
+      Settings = {
+        AutoConnect = true;
+      };
+    };
+  };
+
+  services.uvcvideo.dynctrl = {
+    enable = true;
+    packages = with pkgs; [
+      tiscamera
+    ];
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -26,6 +49,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
 
   # Flakes!!
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -53,10 +77,10 @@
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "latam";
-  #   variant = "";
-  # };
+  services.xserver.xkb = {
+    layout = "latam";
+    variant = "";
+  };
 
   # Configure console keymap
   console.keyMap = "la-latin1";
@@ -102,6 +126,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kitty
+    v4l-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

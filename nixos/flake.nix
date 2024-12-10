@@ -7,7 +7,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
   let
-    host = ""; # host goes here
+    host = "";
   in
   {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

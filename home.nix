@@ -38,6 +38,8 @@
     libsForQt5.qt5ct
     catppuccin-gtk
     nwg-look
+    droidcam
+    cheese
   ];
 
   programs.starship.enable = true;

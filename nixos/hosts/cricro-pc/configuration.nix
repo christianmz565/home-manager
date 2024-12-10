@@ -11,11 +11,17 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "nodev";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader.grub = {
+      enable = true;
+      device = "nodev";
+      useOSProber = true;
+      efiSupport = true;
+    };
+    loader.efi.canTouchEfiVariables = true;
+    kernelModules = [ "v4l2loopback" ];
+    extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -102,6 +108,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kitty
+    v4l-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
