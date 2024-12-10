@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-home_dir="~/.config/home-manager"
-command="$home_dir/combine $*"
+program_dir="$HOME/.config/home-manager/programs/flake-init"
+command="$program_dir/combine $*"
+echo $command
 $command
 echo "Combined flakes $*"
