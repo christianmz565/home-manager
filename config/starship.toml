@@ -20,7 +20,7 @@ $kotlin\
 $haskell\
 $python\
 [](fg:teal bg:blue)\
-$docker_context\
+$nix_shell\
 [](fg:blue bg:purple)\
 $time\
 [ ](fg:purple)\
@@ -121,6 +121,14 @@ format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
 [git_status]
 style = "bg:teal"
 format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+
+[nix_shell]
+format = '[[ $symbol (($name)) ](fg:base bg:blue)]($style)'
+disabled = false
+impure_msg = "[impure](fg:base bg:blue)"
+pure_msg = "[pure](fg:base bg:blue)"
+style = "bg:blue"
+symbol = " "
 
 [nodejs]
 symbol = ""
