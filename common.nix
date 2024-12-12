@@ -35,7 +35,40 @@
     libsForQt5.qt5ct
     catppuccin-gtk
     nwg-look
+    neovim
   ];
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    initExtra = ''
+      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      nixbase="/etc/nixos"
+      nixhome="$HOME/.config/home-manager"
+      codiumdata="$HOME/.config/VSCodium"
+    ''
+
+    shellAliases = {
+      nix-root-config = "sudo codium --no-sandbox --user-data-dir $codiumdata $nixbase";
+      nix-config = "codium $nixhome";
+      nix-reload = "sudo nixos-rebuild switch";
+      nix-flakereload = "cd $nixbase && sudo nix flake update && sudo nixos-rebuild switch --flake .";
+      nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      nix-flake-init = "$nixhome/programs/flake-init/flake-init.sh";
+      cls = "clear";
+    };
+    
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
+
+  };
+
+  programs.neovim.extraLuaPackages = 
 
   programs.starship.enable = true;
 

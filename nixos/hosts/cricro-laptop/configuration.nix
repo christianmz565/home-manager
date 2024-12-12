@@ -114,16 +114,22 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cricro = {
-    isNormalUser = true;
-    description = "Christian";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.cricro = {
+      isNormalUser = true;
+      description = "Christian";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [
+      ];
+    };
   };
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  # zsh
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
