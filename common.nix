@@ -35,8 +35,12 @@
     libsForQt5.qt5ct
     catppuccin-gtk
     nwg-look
+    brightnessctl
     neovim
+    fzf
   ];
+
+  programs.neovim.extraLuaPackages = [ pkgs.luajitPackages.luarocks_bootstrap ];
 
   programs.zsh = {
     enable = true;
@@ -49,7 +53,7 @@
       nixbase="/etc/nixos"
       nixhome="$HOME/.config/home-manager"
       codiumdata="$HOME/.config/VSCodium"
-    ''
+    '';
 
     shellAliases = {
       nix-root-config = "sudo codium --no-sandbox --user-data-dir $codiumdata $nixbase";
@@ -57,7 +61,7 @@
       nix-reload = "sudo nixos-rebuild switch";
       nix-flakereload = "cd $nixbase && sudo nix flake update && sudo nixos-rebuild switch --flake .";
       nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      nix-flake-init = "$nixhome/programs/flake-init/flake-init.sh";
+      nix-flake-init = "$HOME/.config/home-manager/programs/flake-init/combine";
       cls = "clear";
     };
     
@@ -65,10 +69,7 @@
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
-
   };
-
-  programs.neovim.extraLuaPackages = 
 
   programs.starship.enable = true;
 
@@ -79,28 +80,6 @@
     userName = "Christian";
     userEmail = "cmestasz@unsa.edu.pe";
     extraConfig.init.defaultBranch = "main";
-  };
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-      nixbase="/etc/nixos"
-      nixhome="$HOME/.config/home-manager"
-      codiumdata="$HOME/.config/VSCodium"
-    '';
-
-    shellAliases = {
-      nix-root-config = "sudo codium --no-sandbox --user-data-dir $codiumdata $nixbase";
-      nix-config = "codium $nixhome";
-      nix-reload = "sudo nixos-rebuild switch";
-      nix-flakereload = "cd $nixbase && sudo nix flake update && sudo nixos-rebuild switch --flake .";
-      nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      nix-flake-init = "$nixhome/programs/flake-init/flake-init.sh";
-      cls = "clear";
-    };
   };
 
   programs.kitty.enable = true;
