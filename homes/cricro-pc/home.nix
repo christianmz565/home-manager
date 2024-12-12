@@ -6,6 +6,7 @@
         libreoffice
         discord
         obs-studio
+        mpv
     ];
 
     home.file = {

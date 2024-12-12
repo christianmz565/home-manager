@@ -8,6 +8,7 @@
         obs-studio
         droidcam
         cheese
+        mpv
     ];
 
     home.file = {

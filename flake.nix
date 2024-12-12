@@ -9,6 +9,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { nixpkgs, catppuccin, home-manager, ... }@inputs:
@@ -34,7 +35,7 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-        extraSpecialArgs = { inherit pkgs; };
+        extraSpecialArgs = { inherit pkgs; inherit inputs; };
       };
     };
 }
