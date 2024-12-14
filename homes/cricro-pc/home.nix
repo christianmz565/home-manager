@@ -6,9 +6,19 @@
         libreoffice
         discord
         obs-studio
-        mpv
         playerctl
+        pavucontrol
     ];
+
+    programs.mpv = {
+      enable = true;
+      package = pkgs.mpv-unwrapped.wrapper {
+        mpv = pkgs.mpv-unwrapped;
+        scripts = with pkgs.mpvScripts; [
+          mpris
+        ];
+      };
+    };
 
     home.file = {
     ".config/" = {

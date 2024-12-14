@@ -25,6 +25,7 @@
     waybar
     hyprpaper
     wofi
+    wl-clipboard
     cliphist
     nautilus
     hypridle
@@ -94,7 +95,7 @@
   # through Home Manager then you have to manually source 'hm-session-vars.sh'
   # located at either
   home.sessionVariables = {
-    GTK_THEME = "catppuccin-frappe-blue-standard";
+    
   };
 
   # Let Home Manager install and manage itself.

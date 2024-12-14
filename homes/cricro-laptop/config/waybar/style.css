@@ -66,6 +66,7 @@ button:hover {
 #tray,
 #network,
 #mode,
+#submap,
 #scratchpad {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -73,6 +74,10 @@ button:hover {
   margin-right: 4px;
   padding-left: 4px;
   padding-right: 4px;
+}
+
+#submap {
+    color: @overlay2;
 }
 
 #clock {
