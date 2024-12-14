@@ -7,6 +7,7 @@
         discord
         obs-studio
         mpv
+        playerctl
     ];
 
     home.file = {
