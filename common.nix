@@ -39,6 +39,7 @@
     brightnessctl
     neovim
     fzf
+    gotop
   ];
 
   programs.neovim.extraLuaPackages = [ pkgs.luajitPackages.luarocks_bootstrap ];
