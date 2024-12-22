@@ -44,6 +44,12 @@
     devbox
   ];
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.neovim.extraLuaPackages = [ pkgs.luajitPackages.luarocks_bootstrap ];
 
   programs.zsh = {
@@ -54,18 +60,20 @@
 
     initExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-      nixbase="/etc/nixos"
+      nixroot="/etc/nixos"
       nixhome="$HOME/.config/home-manager"
       codiumdata="$HOME/.config/VSCodium"
+      eval "$(direnv hook zsh)"
     '';
 
     shellAliases = {
-      nix-root-config = "sudo codium --no-sandbox --user-data-dir $codiumdata $nixbase";
+      nix-root-config = "sudo codium --no-sandbox --user-data-dir $codiumdata $nixroot";
       nix-config = "codium $nixhome";
       nix-reload = "sudo nixos-rebuild switch";
-      nix-flakereload = "cd $nixbase && sudo nix flake update && sudo nixos-rebuild switch --flake .";
+      nix-flakereload = "cd $nixroot && sudo nix flake update && sudo nixos-rebuild switch --flake .";
       nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       nix-flake-init = "$HOME/.config/home-manager/programs/flake-init/combine";
+      nix-direnv-init = "echo 'use flake' >> .envrc && direnv allow";
       cls = "clear";
     };
     
