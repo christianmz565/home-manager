@@ -40,6 +40,8 @@
     neovim
     fzf
     gotop
+    tree
+    devbox
   ];
 
   programs.neovim.extraLuaPackages = [ pkgs.luajitPackages.luarocks_bootstrap ];
