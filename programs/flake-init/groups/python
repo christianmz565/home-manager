@@ -1,4 +1,4 @@
-(pkgs.python3.withPackages (python-pkgs: with python-pkgs; []))
+-
 -
 ms-python.python
 ms-python.debugpy
