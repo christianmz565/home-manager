@@ -72,7 +72,7 @@
       nix-reload = "sudo nixos-rebuild switch";
       nix-flakereload = "cd $nixroot && sudo nix flake update && sudo nixos-rebuild switch --flake .";
       nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      nix-flake-init = "$HOME/.config/home-manager/programs/flake-init/combine";
+      nix-flake-init = "$nixhome/programs/flake-init/combine";
       nix-direnv-init = "echo 'use flake' >> .envrc && direnv allow";
       cls = "clear";
     };
