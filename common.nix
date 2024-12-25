@@ -64,6 +64,11 @@
       nixhome="$HOME/.config/home-manager"
       codiumdata="$HOME/.config/VSCodium"
       eval "$(direnv hook zsh)"
+      nix-devbox-init() { 
+        $nixhome/programs/devbox-init/combine "$@"
+        echo '.devbox\n.envrc' >> .gitignore
+        devbox generate direnv
+      }    
     '';
 
     shellAliases = {
@@ -72,8 +77,6 @@
       nix-reload = "sudo nixos-rebuild switch";
       nix-flakereload = "cd $nixroot && sudo nix flake update && sudo nixos-rebuild switch --flake .";
       nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      nix-flake-init = "$nixhome/programs/flake-init/combine";
-      nix-direnv-init = "echo 'use flake' >> .envrc && direnv allow";
       cls = "clear";
     };
     
