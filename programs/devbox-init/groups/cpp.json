@@ -1,0 +1,13 @@
+{
+    "pkgs": [
+        "gpp@latest",
+        "gdb@latest"
+    ],
+    "env": {
+    },
+    "vspkgs": [
+        "ms-vscode.cpptools"
+    ],
+    "vsextpkgs": [
+    ]
+}

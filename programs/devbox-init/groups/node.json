@@ -1,0 +1,12 @@
+{
+    "pkgs": [
+        "nodejs@latest"
+    ],
+    "env": {
+        "DEVBOX_COREPACK_ENABLED": "true"
+    },
+    "vspkgs": [
+    ],
+    "vsextpkgs": [
+    ]
+}
