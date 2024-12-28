@@ -78,6 +78,8 @@
       nix-flakereload = "cd $nixroot && sudo nix flake update && sudo nixos-rebuild switch --flake .";
       nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       cls = "clear";
+      git-ac = "git add . && git commit -m";
+      git-p = "git push";
     };
     
     history = {

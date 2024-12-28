@@ -11,5 +11,10 @@
         "ms-python.black-formatter"
     ],
     "vsextpkgs": [
+    ],
+    "inithooks": [
+        ". $VENV_DIR/bin/activate"
+    ],
+    "scripts": [
     ]
 }

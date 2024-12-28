@@ -9,5 +9,9 @@
         "ms-vscode.cpptools"
     ],
     "vsextpkgs": [
+    ],
+    "inithooks": [
+    ],
+    "scripts": [
     ]
 }

@@ -27,7 +27,6 @@
               github.copilot
               jnoortheen.nix-ide
               arrterian.nix-env-selector
-              ms-vscode.cpptools
               vspkgs
             ]);
           });
