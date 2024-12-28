@@ -6,8 +6,13 @@
         "DEVBOX_COREPACK_ENABLED": "true"
     },
     "vspkgs": [
+        "visualstudioexptteam.vscodeintellicode",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
     ],
     "vsextpkgs": [
+        "ms-vscode.vscode-typescript-next"
     ],
     "inithooks": [
     ],
