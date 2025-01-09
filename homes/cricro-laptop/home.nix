@@ -4,7 +4,6 @@
     imports = [ ./common.nix ];
     home.packages = with pkgs; [
         libreoffice
-        discord
         obs-studio
         droidcam
         cheese

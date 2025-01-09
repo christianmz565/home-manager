@@ -4,10 +4,11 @@
     imports = [ ./common.nix ];
     home.packages = with pkgs; [
         libreoffice
-        discord
+        webcord
         obs-studio
         playerctl
         pavucontrol
+        godot_4
     ];
 
     programs.mpv = {
