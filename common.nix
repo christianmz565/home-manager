@@ -39,7 +39,7 @@
     brightnessctl
     neovim
     fzf
-    gotop
+    htop
     tree
     devbox
   ];

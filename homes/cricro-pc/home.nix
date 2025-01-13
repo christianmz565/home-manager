@@ -9,6 +9,7 @@
         playerctl
         pavucontrol
         godot_4
+        google-chrome
     ];
 
     programs.mpv = {
