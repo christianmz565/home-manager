@@ -8,10 +8,10 @@
         "ms-python.python",
         "ms-python.debugpy",
         "ms-python.vscode-pylance",
-        "ms-python.black-formatter",
-        "visualstudioexptteam.vscodeintellicode"
+        "ms-python.black-formatter"
     ],
     "vsextpkgs": [
+        "detachhead.basedpyright"
     ],
     "inithooks": [
         ". $VENV_DIR/bin/activate"
