@@ -73,7 +73,7 @@
 
     shellAliases = {
       nix-root-config = "sudo codium --no-sandbox --user-data-dir $codiumdata $nixroot";
-      nix-config = "codium $nixhome";
+      nix-config = "cd $nixhome && codium .";
       nix-reload = "sudo nixos-rebuild switch";
       nix-flakereload = "cd $nixroot && sudo nix flake update && sudo nixos-rebuild switch --flake .";
       nix-cleanup = "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
