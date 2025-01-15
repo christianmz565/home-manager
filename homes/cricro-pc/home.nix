@@ -9,6 +9,7 @@
         playerctl
         pavucontrol
         godot_4
+        reco
     ];
 
     programs.mpv = {
