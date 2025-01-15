@@ -132,6 +132,10 @@
   #   enableSSHSupport = true;
   # };
 
+  # Noisetorch, at least until it gets ported to home-manager options
+  # because i won't learn how to use layers
+  programs.noisetorch.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

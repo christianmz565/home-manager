@@ -9,7 +9,7 @@
         playerctl
         pavucontrol
         godot_4
-        reco
+        audio-recorder
     ];
 
     programs.mpv = {
