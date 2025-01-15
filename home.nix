@@ -1,0 +1,1 @@
+./homes/cricro-pc/home.nix
