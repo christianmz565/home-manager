@@ -19,6 +19,7 @@
       efiSupport = true;
     };
     loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages;
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
@@ -94,11 +95,25 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Sway
+  security.polkit.enable = true;                                                                   
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "cricro";
+      };
+    };
+  };
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    wireplumber.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;

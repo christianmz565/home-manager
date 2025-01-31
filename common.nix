@@ -24,7 +24,7 @@
     hyprpolkitagent
     waybar
     hyprpaper
-    wofi
+    rofi-wayland
     wl-clipboard
     cliphist
     nautilus
@@ -42,12 +42,40 @@
     htop
     tree
     devbox
+    grim
+    slurp
+    swaybg
+    swaylock
   ];
 
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+      libsForQt5.xdg-desktop-portal-kde
+    ];
+    config = {
+      common = {
+        default = ["gtk"];
+      };
+      Hyprland = {
+        default = ["hyprland" "gtk"];
+      };
+      sway = {
+        default = ["wlr" "gtk"];
+      };
+      KDE = {
+        default = ["kde" "gtk"];
+      };
+    };
   };
 
   programs.neovim.extraLuaPackages = [ pkgs.luajitPackages.luarocks_bootstrap ];
@@ -94,16 +122,17 @@
 
   programs.git = {
     enable = true;
-    userName = "Christian";
-    userEmail = "cmestasz@unsa.edu.pe";
     extraConfig.init.defaultBranch = "main";
   };
 
   programs.kitty.enable = true;
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-  };
+  services.gnome-keyring.enable = true;
+
+  # wayland.windowManager.sway = {
+  #   enable = true;
+  #   wrapperFeatures.gtk = true;
+  # };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

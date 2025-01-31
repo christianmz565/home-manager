@@ -4,7 +4,7 @@
     imports = [ ./common.nix ];
     home.packages = with pkgs; [
         libreoffice
-        webcord
+        
         obs-studio
         playerctl
         pavucontrol

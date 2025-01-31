@@ -20,6 +20,7 @@
       efiSupport = true;
     };
     loader.efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages;
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
@@ -61,6 +62,7 @@
   # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
+  # TODO over here
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -76,6 +78,46 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Sway
+  security.polkit.enable = true;
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      sway = {
+        prettyName = "sway :>";
+        comment = "it good";
+        binPath = "/run/current-system/sw/bin/sway";
+      };
+      hyprland = {
+        prettyName = "the damned hyprland";
+        comment = "not gonna sugarcoat it";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+      plasma = {
+        prettyName = "plasma";
+        comment = "good ol reliable";
+        binPath = "/run/current-system/sw/bin/plasmashell";
+      };
+    };
+  };
+
+  # services.greetd = {
+  #   enable = true;
+  #   settings = rec {
+  #     initial_session = {
+  #       command = "${pkgs.sway}/bin/sway";
+  #       user = "cricro";
+  #     };
+  #     default_session = initial_session;
+  #   };
+  # };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
