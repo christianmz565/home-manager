@@ -34,6 +34,7 @@
       buildInputs = [ pkgs.bashInteractive ];
       initHook = ''
       inithooks
+        zsh
       '';
     };
   };
