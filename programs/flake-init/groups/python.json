@@ -1,6 +1,7 @@
 {
     "pkgs": [
-        "python"
+        "python",
+        "poetry"
     ],
     "vspkgs": [
         "ms-python.python",

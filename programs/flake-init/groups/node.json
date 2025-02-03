@@ -1,6 +1,7 @@
 {
     "pkgs": [
-        "nodejs"
+        "nodejs",
+        "pnpm"
     ],
     "vspkgs": [
         "visualstudioexptteam.vscodeintellicode",
