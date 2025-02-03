@@ -1,17 +1,14 @@
 {
     "pkgs": [
-        "gpp@latest",
-        "gdb@latest"
+        "gpp",
+        "gdb"
     ],
-    "env": {
-    },
     "vspkgs": [
         "ms-vscode.cpptools"
     ],
     "vsextpkgs": [
     ],
     "inithooks": [
-    ],
-    "scripts": {  
-    }
+        "test"
+    ]
 }

@@ -92,11 +92,12 @@
       nixhome="$HOME/.config/home-manager"
       codiumdata="$HOME/.config/VSCodium"
       eval "$(direnv hook zsh)"
-      nix-devbox-init() { 
-        $nixhome/programs/devbox-init/combine "$@"
-        echo '.devbox\n.envrc' >> .gitignore
-        devbox generate direnv
-      }    
+      nix-flake-init() { 
+        $nixhome/programs/flake-init/combine "$@"
+        echo '.direnv\n.envrc' >> .gitignore
+        echo "use flake" >> .envrc
+        direnv allow
+      }
     '';
 
     shellAliases = {

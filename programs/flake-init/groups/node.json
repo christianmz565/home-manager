@@ -1,10 +1,7 @@
 {
     "pkgs": [
-        "nodejs@latest"
+        "nodejs"
     ],
-    "env": {
-        "DEVBOX_COREPACK_ENABLED": "true"
-    },
     "vspkgs": [
         "visualstudioexptteam.vscodeintellicode",
         "bradlc.vscode-tailwindcss",
@@ -15,7 +12,5 @@
         "ms-vscode.vscode-typescript-next"
     ],
     "inithooks": [
-    ],
-    "scripts": {  
-    }
+    ]
 }

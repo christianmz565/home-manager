@@ -1,9 +1,7 @@
 {
     "pkgs": [
-        "python@latest"
+        "python"
     ],
-    "env": {
-    },
     "vspkgs": [
         "ms-python.python",
         "ms-python.debugpy",
@@ -13,8 +11,5 @@
         "detachhead.basedpyright"
     ],
     "inithooks": [
-        ". $VENV_DIR/bin/activate"
-    ],
-    "scripts": {  
-    }
+    ]
 }
