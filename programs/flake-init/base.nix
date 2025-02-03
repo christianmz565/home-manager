@@ -14,6 +14,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+      extensions = inputs.vscode-extensions.extensions.${system};
     in pkgs.mkShell {
       packages = with pkgs; [
         (vscode-with-extensions.override {
