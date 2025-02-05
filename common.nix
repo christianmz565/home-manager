@@ -33,7 +33,6 @@
     hyprshot
     hyprcursor
     nerd-fonts.caskaydia-mono
-    libsForQt5.qt5ct
     catppuccin-gtk
     nwg-look
     brightnessctl
@@ -77,8 +76,6 @@
       };
     };
   };
-
-  programs.neovim.extraLuaPackages = [ pkgs.luajitPackages.luarocks_bootstrap ];
 
   programs.zsh = {
     enable = true;
