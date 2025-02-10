@@ -1,6 +1,6 @@
 {
     "pkgs": [
-        "python",
+        "python3",
         "poetry"
     ],
     "vspkgs": [
