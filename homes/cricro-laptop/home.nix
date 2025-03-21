@@ -10,6 +10,7 @@
         mpv
         godot_4
         brave
+        micro
     ];
 
     home.file = {

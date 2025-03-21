@@ -12,6 +12,7 @@
         godot_4
         audio-recorder
         brave
+        micro
     ];
 
     programs.mpv = {
