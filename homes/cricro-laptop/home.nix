@@ -8,6 +8,7 @@
         droidcam
         cheese
         mpv
+        godot_4
     ];
 
     home.file = {
