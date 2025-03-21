@@ -11,6 +11,7 @@
         pavucontrol
         godot_4
         audio-recorder
+        brave
     ];
 
     programs.mpv = {

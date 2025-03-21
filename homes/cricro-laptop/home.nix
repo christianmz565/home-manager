@@ -9,6 +9,7 @@
         cheese
         mpv
         godot_4
+        brave
     ];
 
     home.file = {
